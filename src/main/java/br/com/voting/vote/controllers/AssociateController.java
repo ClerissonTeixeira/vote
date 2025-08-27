@@ -29,22 +29,20 @@ public class AssociateController {
     }
 
     @GetMapping(path = "{id}")
-    public ResponseEntity<Associate> getById(@PathVariable("id") String id) {
+    public ResponseEntity<Associate> getById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(associateService.findById(id));
     }
 
     @DeleteMapping(path = "{id}")
-    public ResponseEntity<Void> removeAssociate(@PathVariable("id") String id) {
+    public ResponseEntity<Void> removeAssociate(@PathVariable("id") Long id) {
         associateService.deleteAssociate(id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping(path = "{id}")
-    public ResponseEntity<Void> updateAssociate(@PathVariable("id") String id,
+    public ResponseEntity<Void> updateAssociate(@PathVariable("id") Long id,
                                                 @RequestBody AssociateDTO associateDTO) {
-        associateService.updateAssociate(associateDTO, id);
+        associateService.updateAssociate(id, associateDTO);
         return ResponseEntity.noContent().build();
     }
-
-
 }

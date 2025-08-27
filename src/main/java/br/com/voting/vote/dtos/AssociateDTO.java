@@ -2,15 +2,15 @@ package br.com.voting.vote.dtos;
 
 public class AssociateDTO {
 
-    private String id;
+    private Long id;   // agora é Long para bater com a entidade
     private String name;
     private String cpf;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -18,7 +18,7 @@ public class AssociateDTO {
         return name;
     }
 
-    public void setNome(String name) {
+    public void setName(String name) {  
         this.name = name;
     }
 
